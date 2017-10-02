@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "327394550587",
+    "project_id": "appv0-fe6e4"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327394550587:android:db13ad63e12a9a30",
+        "android_client_info": {
+          "package_name": "com.udea.santiagoceron.appv0"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327394550587-o69uonol54sfo0eb8j9p9034iomdipk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udea.santiagoceron.appv0",
+            "certificate_hash": "44f0e4116eceb81dfe9936419a5365c61ce6b949"
+          }
+        },
+        {
+          "client_id": "327394550587-69qfh1hv2ehtm99khtjbunuidil92dj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd0Ukos6bUYBb2WciPcbMQb5r82sw9Rkk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
