@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -38,17 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 }/* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-        //REcuperar lo de reg
-        /*
-        Bundle extras = getIntent().getExtras();
-        RegMail = extras.getString("mail");
-        RegPass = extras.getString("pass");
-        RegUsername = extras.getString("username");
-        RegFoto= extras.getString("foto");
 
-
-        Toast.makeText(this,RegMail, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this,RegPass,Toast.LENGTH_SHORT).show();*/
     }
 
     //create menu
@@ -64,31 +56,37 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent;
         switch (id) {
+
             case R.id.sPerfil:
                 intent = new Intent(MainActivity.this,activity_perfil.class);
-                /*intent.putExtra("pass",RegPass);
-                intent.putExtra("mail",RegMail);
-                intent.putExtra("username",RegUsername);
-                intent.putExtra("foto",RegFoto);*/
                 startActivity(intent);
                 break;
+
             case R.id.sClose:
+
                 intent = new Intent(MainActivity.this,activity_login.class);
                 String vacio = " ";
                 SharedPreferences sharedPrefs = getSharedPreferences("ArchivoSP", this.MODE_PRIVATE);
                 SharedPreferences.Editor editorSP= sharedPrefs.edit();
+                int loco = sharedPrefs.getInt("optLog",0);
+                if(sharedPrefs.getInt("optLog",0)==3){
+                    LoginManager.getInstance().logOut();
+                }
+                if(sharedPrefs.getInt("optLog",0)==2){
+                    signOut();
+                }
                 editorSP.putInt("optLog",0);
-                editorSP.putString("username",vacio);
-                editorSP.putString("email",vacio);
-                editorSP.putString("celular",vacio);
-                editorSP.putString("password",vacio);
-                editorSP.putString("foto",vacio);
+                editorSP.putString("username",RegUsername);
+                editorSP.putString("email",RegMail);
+                editorSP.putString("password",RegPass);
+                //editorSP.putString("password",null);
+                //editorSP.putString("foto",null);
                 editorSP.commit();
-                /*intent.putExtra("pass",RegPass);
-                intent.putExtra("mail",RegMail);*/
+                intent.putExtra("pass",RegPass);
+                intent.putExtra("mail",RegMail);
                 intent.putExtra("Splash",false);
+
                 startActivity(intent);
-                signOut();
                 finish();
                 break;
         }
@@ -103,4 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }

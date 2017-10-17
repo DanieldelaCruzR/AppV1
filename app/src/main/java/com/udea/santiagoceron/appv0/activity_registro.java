@@ -80,6 +80,15 @@ public class activity_registro extends AppCompatActivity {
         intent.putExtra("pass",pass1);
         intent.putExtra("username",username);
         intent.putExtra("celular",celular);
+
+
+        SharedPreferences sharedPrefs = getSharedPreferences("ArchivoSP", activity_registro.MODE_PRIVATE);
+        SharedPreferences.Editor editorSP= sharedPrefs.edit();
+        editorSP.putString("username",username);
+        editorSP.putString("email",mail);
+        editorSP.putString("celular","Number phone no available");
+        editorSP.putString("password",pass1);
+        editorSP.commit();
         setResult(RESULT_OK, intent);
         finish();
     }

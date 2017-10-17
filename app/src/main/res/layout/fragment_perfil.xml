@@ -1,0 +1,135 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.udea.santiagoceron.appv0.PerfilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondoup"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:layout_marginTop="100dp">
+            <ImageView
+                android:id="@+id/fotoPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center"
+                android:text="@string/username2"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/sUsername"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center_vertical"
+                android:text="@string/username"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center"
+                android:text="@string/celular2"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/sCelular"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center_vertical"
+                android:text="@string/celular"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center"
+                android:text="@string/email2"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/sEmail"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center_vertical"
+                android:text="@string/email"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="50dp">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center"
+                android:text="@string/pass"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/sPass"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:gravity="center_vertical"
+                android:text="@string/pass"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

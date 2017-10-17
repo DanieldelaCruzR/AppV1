@@ -89,11 +89,33 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:gravity="center">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15sp">
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp" />
+            </LinearLayout>
 
     </LinearLayout>
 

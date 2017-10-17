@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.udea.santiagoceron.appv0">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-
-        <activity android:name=".activity_splash"
+        <activity
+            android:name=".activity_splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,15 +25,26 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity_login"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name=".activity_perfil"
-            android:label="Perfil"/>
-
+        <activity
+            android:name=".activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity_perfil"
+            android:label="Perfil" />
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".activity_registro"></activity>
+        <activity android:name=".activity_registro" />
+        <activity
+            android:name=".TabsActivity"
+            android:label="@string/title_activity_tabs"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NavDrawActivity"
+            android:label="@string/title_activity_nav_draw"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

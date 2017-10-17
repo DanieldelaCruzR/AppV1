@@ -7,19 +7,20 @@
     tools:context="com.udea.santiagoceron.appv0.activity_registro"
     android:background="@drawable/fondodown">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:text="@string/register"
-                android:textSize="45dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:shadowColor="@color/primary_text"
-                android:shadowDx="0"
-                android:shadowDy="0"
-                android:shadowRadius="25"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:shadowColor="@color/primary_text"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="25"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="45dp"
+        android:textStyle="bold" />
 
 
     <EditText
