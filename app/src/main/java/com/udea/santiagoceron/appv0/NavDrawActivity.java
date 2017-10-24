@@ -43,7 +43,7 @@ public class NavDrawActivity extends AppCompatActivity
     private TextView NDname, NDemail;
     private ImageView NDfoto;
     private boolean vista;
-    private LinearLayout Lineartabs,Linearbottom;
+    private LinearLayout Lineartabs,Linearbottom,Linearbottom2;
     private NavDrawActivity.SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
@@ -86,6 +86,7 @@ public class NavDrawActivity extends AppCompatActivity
 
         Lineartabs= (LinearLayout) findViewById(R.id.Lineartabs);
         Linearbottom= (LinearLayout) findViewById(R.id.Linearbottom);
+        Linearbottom2= (LinearLayout) findViewById(R.id.Linearbottom2);
         NDname=(TextView)findViewById(R.id.NDname);
         NDemail=(TextView)findViewById(R.id.NDemail);
         NDfoto=(ImageView)findViewById(R.id.NDfoto);
@@ -136,6 +137,7 @@ public class NavDrawActivity extends AppCompatActivity
             transaction.replace(R.id.content_frame, fragmentTienda).commit();
             Linearbottom.setVisibility(View.VISIBLE);
             Lineartabs.setVisibility(View.GONE);
+            Linearbottom2.setVisibility(View.GONE);
         }
         else{  // Create the adapter that will return a fragment for each of the three
             // primary sections of the activity.
@@ -149,7 +151,9 @@ public class NavDrawActivity extends AppCompatActivity
             tabLayout.setupWithViewPager(mViewPager);
 
             Linearbottom.setVisibility(View.GONE);
-            Lineartabs.setVisibility(View.VISIBLE);}
+            Lineartabs.setVisibility(View.VISIBLE);
+            Linearbottom2.setVisibility(View.GONE);}
+
 
     }
 
@@ -179,10 +183,11 @@ public class NavDrawActivity extends AppCompatActivity
             case R.id.sPerfil:
                 FragmentManager fm= getSupportFragmentManager();
                 FragmentTransaction ft= fm.beginTransaction();
-                Linearbottom.setVisibility(View.VISIBLE);
+                Linearbottom.setVisibility(View.GONE);
                 Lineartabs.setVisibility(View.GONE);
+                Linearbottom2.setVisibility(View.VISIBLE);
                 PerfilFragment fragment= new PerfilFragment();
-                ft.replace(R.id.content_frame, fragment).commit();
+                ft.replace(R.id.content_frame2, fragment).commit();
                 break;
             case R.id.sVista:
                 switchVista();
@@ -227,13 +232,22 @@ public class NavDrawActivity extends AppCompatActivity
             Intent intent2 =new Intent (NavDrawActivity.this , NavDrawActivity.class);
             startActivity(intent2);
             finish();
-        } else if (id == R.id.nav_perfil) {
-            Linearbottom.setVisibility(View.VISIBLE);
+        }
+        else if (id == R.id.nav_perfil) {
+            Linearbottom.setVisibility(View.GONE);
             Lineartabs.setVisibility(View.GONE);
+            Linearbottom2.setVisibility(View.VISIBLE);
             PerfilFragment fragment= new PerfilFragment();
-            ft.replace(R.id.content_frame, fragment).commit();
+            ft.replace(R.id.content_frame2, fragment).commit();
 
-        } else if (id == R.id.nav_vista) {
+        } else if (id == R.id.nav_informacion) {
+            Linearbottom.setVisibility(View.GONE);
+            Lineartabs.setVisibility(View.GONE);
+            Linearbottom2.setVisibility(View.VISIBLE);
+            InformacionFragment fragment3= new InformacionFragment();
+            ft.replace(R.id.content_frame2, fragment3).commit();
+        }
+        else if (id == R.id.nav_vista) {
             switchVista();
         } else if (id == R.id.nav_close) {
             cerrarSesion();
